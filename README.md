@@ -2,8 +2,6 @@
 
 ## Pure Redux
 
----
-
 ```js
 import { createStore } from "redux";
 ```
