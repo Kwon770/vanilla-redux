@@ -6,8 +6,6 @@
 import { createStore } from "redux";
 ```
 
----
-
 ### Store
 
 Where the data is saved
