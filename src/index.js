@@ -5,16 +5,19 @@ const minus = document.getElementById("minus");
 const number = document.querySelector("span");
 number.innerText = 0;
 
+const ADD = "ADD";
+const MINUS = "MINUS";
+
 // reducer : countModifier : the only function to change data
 // Store : countStore : where the data is saved
 const countModifier = (count = 0, action) => {
-  if (action.type === "ADD") {
-    // (count++ , count--) can update state
-    return count + 1;
-  } else if (action.type === "MINUS") {
-    return count - 1;
-  } else {
-    return count;
+  switch (action.type) {
+    case ADD:
+      return count + 1;
+    case MINUS:
+      return count - 1;
+    default:
+      return count;
   }
 };
 
@@ -26,13 +29,15 @@ const onChange = () => {
 // store.subscribe(function) : execute funtion whenever state update
 countStore.subscribe(onChange);
 
-// store.dispatch(par) : execute the function with sending parameter
+// store.dispatch({ type : "type"}) : execute the function with sending type
+// Parameter of dispatch must be object and have type (can't be other name)
+// Instead of using string, use variable to prevent misspelling bug
 const handleAdd = () => {
-  countStore.dispatch({ type: "ADD" });
+  countStore.dispatch({ type: ADD });
 };
 
 const handleMinus = () => {
-  countStore.dispatch({ type: "MINUS" });
+  countStore.dispatch({ type: MINUS });
 };
 
 plus.addEventListener("click", handleAdd);
