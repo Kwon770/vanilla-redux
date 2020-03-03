@@ -1,68 +1,78 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Vanilla Redux
 
-## Available Scripts
+## Pure Redux
 
-In the project directory, you can run:
+---
 
-### `yarn start`
+```js
+import { createStore } from "redux";
+```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Store
 
-### `yarn test`
+Where the data is saved
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- sadasd
 
-### `yarn build`
+```js
+const store = createStore(Reducer);
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Reducer
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+The only function to change data
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Default value of state is start value (It will change after frist execute)
+- Using switch with action is best usage
 
-### `yarn eject`
+```js
+const Reducer = (state = 0, action) => {
+  switch (action.type) {
+    case ADD:
+      return state + 1;
+    case MINUS:
+      return state - 1;
+    default:
+      return state;
+  }
+};
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Dispatch
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+store.dispatch({ type: "type" }) : Sending type to store as action
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Parameter of dispatch must be object and have type in object (can't be other name)
+- Instead of using string as type value, use variable to prevent misspelling mistake
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```js
+const ADD = "ADD";
 
-## Learn More
+const handleAdd = () => {
+  countStore.dispatch({ type: ADD });
+};
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+// Usage
+plus.addEventListener("click", handleAdd); // plus is button element
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Subsctibe
 
-### Code Splitting
+store.subscribe(function) : Execute funtion whenever state of store is updated
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```js
+const onChange = () => {
+  number.innerText = countStore.getState(); // number is span element
+};
 
-### Analyzing the Bundle Size
+countStore.subscribe(onChange);
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+---
+---
 
-### Making a Progressive Web App
+## React Redux
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+---
