@@ -1,6 +1,6 @@
 # Vanilla Redux
 
-## Three Principles of Redux
+## [Three Principles of Redux](https://redux.js.org/introduction/three-principles/)
 
 ### 1. Single source of truth
 
