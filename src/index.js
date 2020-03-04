@@ -37,8 +37,6 @@ const reducer = (state = [], action) => {
 
 const store = createStore(reducer);
 
-// store.subscribe();
-
 const dispatchAddToDo = text => {
   store.dispatch(addToDo(text));
 };

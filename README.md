@@ -1,5 +1,21 @@
 # Vanilla Redux
 
+## Three Principles of Redux
+
+### 1. Single source of truth
+
+The state of your whole application is stored in an object tree within a single store
+
+### 2. State is read-only
+
+The only way to change the state is to emit an action, an object describing what happened
+
+### 3. Changes are made with pure functions
+
+Reducer must return new state object, instead of mutating(modifying) the previous state
+
+---
+
 ## Pure Redux
 
 ```js
@@ -67,8 +83,5 @@ countStore.subscribe(onChange);
 ```
 
 ---
----
 
 ## React Redux
-
----
