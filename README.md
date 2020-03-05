@@ -143,8 +143,7 @@ export default App;
 
 <br>
 
-<U> Below Code is written only for explaining redux ! <br>
-Don't copy and past on your code <U/>
+<u> Below Code is written only for explaining redux ! Don't copy and past on your code !<u/>
 
 ```js
 // Home.js
