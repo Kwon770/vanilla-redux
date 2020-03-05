@@ -45,5 +45,6 @@ function mapDispatchToProps(dispatch, ownProps) {
   };
 }
 
-// connect(map-state-to-props, map-dispatch-to-props) : The function connects react component to redux store
+// connect(map-state-to-props, map-dispatch-to-props)(component)
+// The function to connect react component to redux store
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
