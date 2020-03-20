@@ -4,7 +4,7 @@
 
 ### 1. Single source of truth
 
-The state of your whole application is stored in an object tree within a single store
+The state of your whole application is stored in an object tree within a single-store
 
 ### 2. State is read-only
 
@@ -26,8 +26,6 @@ import { createStore } from "redux";
 
 Where the data is saved
 
-- sadasd
-
 ```js
 const store = createStore(Reducer);
 ```
@@ -36,8 +34,8 @@ const store = createStore(Reducer);
 
 The only function to change data
 
-- Default value of state is start value (It will change after frist execute)
-- Using switch with action is best usage
+- The default value of State is start value (It will change after first execute)
+- Using Switch with action is the best usage
 
 ```js
 const Reducer = (state = 0, action) => {
@@ -56,8 +54,8 @@ const Reducer = (state = 0, action) => {
 
 store.dispatch({ type: "type" }) : Sending type to store as action
 
-- Parameter of dispatch must be object and have type in object (can't be other name)
-- Instead of using string as type value, use variable to prevent misspelling mistake
+- Parameter of dispatch must be Object and have type in Object (can't be another name)
+- Instead of using String as a type value, use variable to prevent misspelling mistake
 
 ```js
 const ADD = "ADD";
@@ -86,7 +84,7 @@ countStore.subscribe(onChange);
 
 ## React Redux
 
-Most code related with creating store is same with pure Redux
+Most code related to creating Store is same with pure Redux
 
 ### Using redux from other components
 
@@ -139,12 +137,12 @@ export default App;
   - The function to return data of store to connected component **as props**
   - The function for dispatching actions to store
 - **connect(mapStateToProps, mapDispatchingToProps)(component)**
-  - The function to connect react component to redux store
+  - The function to connect react component to Redux store
 
 <br>
 
-<U> Below Code is written only for explaining redux ! <br>
-Don't copy and past on your code <U/>
+<U> Below Code is written only for explaining Redux! <br>
+Don't copy and paste on your code <U/>
 
 ```js
 // Home.js
