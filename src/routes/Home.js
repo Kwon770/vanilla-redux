@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
+c;
 import { actionCreators } from "../Store";
 import ToDo from "../components/ToDo";
 
@@ -21,7 +21,7 @@ function Home({ toDos, addToDo }) {
         <button>Add</button>
       </form>
       <ul>
-        {toDos.map(toDo => (
+        {toDos.map((toDo) => (
           <ToDo {...toDo} key={toDo.key} />
         ))}
       </ul>
@@ -41,7 +41,7 @@ function mapStateToProps(state, ownProps) {
 // The function for dispatching actions to store
 function mapDispatchToProps(dispatch, ownProps) {
   return {
-    addToDo: text => dispatch(actionCreators.addToDo(text))
+    addToDo: (text) => dispatch(actionCreators.addToDo(text)),
   };
 }
 
